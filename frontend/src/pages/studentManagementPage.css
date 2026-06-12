@@ -1,0 +1,457 @@
+.student-workspace {
+  display: grid;
+  min-height: 0;
+}
+
+.student-workspace-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.student-left-column {
+  display: grid;
+  gap: 18px;
+}
+
+.student-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 150px));
+  gap: 14px;
+  justify-content: start;
+}
+
+.student-stat-card,
+.student-panel-card,
+.student-enrollments-card,
+.student-onboard-card,
+.student-class-count-card {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(140, 110, 162, 0.08);
+  box-shadow: 0 20px 44px rgba(144, 122, 164, 0.08);
+}
+
+.student-stat-card {
+  position: relative;
+  min-height: 86px;
+  padding: 16px 14px;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.student-stat-card h3 {
+  margin: 10px 0 6px;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #322f3d;
+}
+
+.student-stat-card p {
+  margin: 0;
+  color: rgba(63, 44, 80, 0.68);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.student-stat-card.purple {
+  background: linear-gradient(135deg, #c79df2 0%, #cfa9f8 100%);
+}
+
+.student-stat-card.gold {
+  background: linear-gradient(135deg, #fde7a2 0%, #ffecb5 100%);
+}
+
+.student-stat-plus {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.7rem;
+  color: rgba(255, 247, 187, 0.95);
+}
+
+.student-panel-card {
+  padding: 22px 18px 20px;
+}
+
+.student-class-count-card {
+  padding: 18px;
+}
+
+.student-panel-head,
+.student-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.student-panel-head {
+  margin-bottom: 18px;
+}
+
+.student-panel-head h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #3c3148;
+}
+
+.student-panel-head p {
+  margin: 6px 0 0;
+  color: #8b7e96;
+  font-size: 0.88rem;
+}
+
+.student-toolbar-summary,
+.student-enrollment-context {
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(245, 238, 248, 0.9);
+}
+
+.student-filter-group span,
+.student-search-field span,
+.student-enrollment-context span {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a095ae;
+}
+
+.student-toolbar-summary strong,
+.student-enrollment-context strong {
+  display: block;
+  margin-top: 6px;
+  color: #493950;
+}
+
+.student-toolbar-summary span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #8b7e96;
+}
+
+.student-toolbar {
+  display: grid;
+  grid-template-columns: minmax(330px, 420px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.student-filter-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 24px;
+  background: rgba(247, 243, 250, 0.95);
+}
+
+.student-filter-group label,
+.student-search-field {
+  display: grid;
+  gap: 8px;
+}
+
+.student-filter-group select,
+.student-search-field input,
+.student-pill-field input,
+.student-pill-field select,
+.student-cell select {
+  width: 100%;
+  border: 1px solid rgba(162, 145, 178, 0.12);
+  outline: none;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 14px 16px;
+  font-size: 0.96rem;
+  color: #54475f;
+}
+
+.student-class-count-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.student-class-count-pill {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  padding: 0;
+  background: transparent;
+}
+
+.student-class-count-pill span {
+  color: #70648a;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.student-class-count-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(236, 232, 240, 0.9);
+}
+
+.student-class-count-fill {
+  height: 100%;
+  min-width: 6px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #b9ff72 0%, #9ef26a 100%);
+}
+
+.student-class-count-pill strong {
+  min-width: 0;
+  padding: 0;
+  color: #8e819e;
+  text-align: left;
+  background: transparent;
+  font-size: 0.74rem;
+}
+
+.student-feedback {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.student-feedback.success {
+  background: rgba(166, 239, 185, 0.35);
+  color: #285a34;
+}
+
+.student-feedback.error {
+  background: rgba(253, 203, 213, 0.55);
+  color: #7d3450;
+}
+
+.student-side-stack {
+  display: grid;
+  align-content: start;
+  grid-template-rows: none;
+  gap: 18px;
+}
+
+.student-side-stack > * {
+  min-width: 0;
+}
+
+.student-enrollments-card {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.student-onboard-card {
+  padding: 18px;
+}
+
+.student-card-head h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #3d3043;
+}
+
+.student-card-head p {
+  margin: 6px 0 0;
+  color: #8b7e96;
+  font-size: 0.88rem;
+}
+
+.student-card-head.stacked {
+  margin-bottom: 16px;
+}
+
+.student-search-field {
+  min-width: 280px;
+}
+
+.student-enrollment-table {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 22px;
+  background: rgba(255, 238, 170, 0.82);
+}
+
+.student-enrollment-head,
+.student-enrollment-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 1.6fr) 0.9fr 0.85fr 1fr 1.1fr 0.65fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.student-enrollment-head {
+  padding: 0 8px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7f718f;
+}
+
+.student-enrollment-scroll {
+  display: grid;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 6px;
+  padding-bottom: 4px;
+}
+
+.student-enrollment-row {
+  padding: 12px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.52);
+}
+
+.student-cell {
+  min-width: 0;
+  color: #5a4d62;
+  font-size: 0.92rem;
+}
+
+.student-student-cell strong,
+.student-student-cell small {
+  display: block;
+}
+
+.student-student-cell strong {
+  color: #382d43;
+}
+
+.student-student-cell small {
+  margin-top: 4px;
+  color: #8e819e;
+}
+
+.student-cell a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(215, 166, 246, 0.26);
+  color: #6b4b84;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.student-cell select {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.84rem;
+}
+
+.student-form {
+  display: grid;
+  gap: 14px;
+}
+
+.student-pill-field {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aab8ff 0%, #b6bcff 100%);
+}
+
+.student-pill-field span {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.student-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.student-action-button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d7a6f6 0%, #cf99f2 100%);
+  color: #503166;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.student-workspace-empty {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #8d8197;
+  font-weight: 600;
+}
+
+.student-workspace-empty.compact {
+  min-height: 120px;
+}
+
+@media (max-width: 1200px) {
+  .student-workspace-main {
+    grid-template-columns: 1fr;
+  }
+
+  .student-stat-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .student-stat-grid,
+  .student-toolbar,
+  .student-enrollment-head,
+  .student-enrollment-row,
+  .student-pill-field {
+    grid-template-columns: 1fr;
+  }
+
+  .student-panel-head,
+  .student-card-head {
+    flex-direction: column;
+  }
+
+  .student-search-field {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-stat-grid,
+  .student-class-count-grid,
+  .student-filter-group {
+    grid-template-columns: 1fr;
+  }
+
+  .student-enrollments-card,
+  .student-onboard-card,
+  .student-panel-card {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,332 @@
+.subjects-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.95fr);
+  gap: 18px;
+  min-height: 0;
+}
+
+.subjects-main,
+.subjects-side {
+  display: grid;
+  gap: 18px;
+}
+
+.subjects-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 0.24fr));
+  gap: 14px;
+  justify-content: start;
+}
+
+.subjects-stat-card,
+.subjects-panel-card {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(140, 110, 162, 0.08);
+  box-shadow: 0 20px 44px rgba(144, 122, 164, 0.08);
+}
+
+.subjects-stat-card {
+  position: relative;
+  min-height: 86px;
+  padding: 16px 14px;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.subjects-stat-card h3 {
+  margin: 10px 0 6px;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #322f3d;
+}
+
+.subjects-stat-card p {
+  margin: 0;
+  color: rgba(63, 44, 80, 0.68);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.subjects-stat-card.purple {
+  background: linear-gradient(135deg, #c79df2 0%, #cfa9f8 100%);
+}
+
+.subjects-stat-card.gold {
+  background: linear-gradient(135deg, #fde7a2 0%, #ffecb5 100%);
+}
+
+.subjects-stat-plus {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.7rem;
+  color: rgba(255, 247, 187, 0.95);
+}
+
+.subjects-panel-card {
+  padding: 18px;
+}
+
+.subjects-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.subjects-panel-head h3 {
+  margin: 0;
+  color: #3d3043;
+  font-size: 1.05rem;
+}
+
+.subjects-class-chip {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 0 12px;
+  min-height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d7a6f6 0%, #cf99f2 100%);
+}
+
+.subjects-class-chip span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.subjects-class-chip select {
+  border: 0;
+  background: transparent;
+  color: #f8f5ff;
+  font-size: 0.78rem;
+  outline: none;
+}
+
+.subjects-feedback {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.subjects-feedback.success {
+  background: rgba(166, 239, 185, 0.35);
+  color: #285a34;
+}
+
+.subjects-feedback.error {
+  background: rgba(253, 203, 213, 0.55);
+  color: #7d3450;
+}
+
+.subjects-map-grid,
+.subjects-assigned-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.subjects-map-pill,
+.subjects-assigned-pill {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 10px 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aab8ff 0%, #b6bcff 100%);
+}
+
+.subjects-map-pill span,
+.subjects-assigned-pill span {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.subjects-map-pill button,
+.subjects-assigned-pill button,
+.subjects-create-button {
+  border: 0;
+  border-radius: 999px;
+  min-height: 32px;
+  padding: 0 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.subjects-map-pill button {
+  background: #ffffff;
+  color: #8a8a95;
+}
+
+.subjects-assigned-pill button {
+  background: rgba(255, 255, 255, 0.9);
+  color: #7b5a8d;
+}
+
+.subjects-map-pill button:disabled,
+.subjects-assigned-pill button:disabled,
+.subjects-create-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.subjects-create-form {
+  display: grid;
+  gap: 18px;
+}
+
+.subjects-create-field {
+  display: grid;
+  gap: 14px;
+  place-items: center;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #a3b2f6 0%, #a9b6fa 100%);
+}
+
+.subjects-create-field span {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1e1a26;
+}
+
+.subjects-create-field input {
+  width: 100%;
+  max-width: 170px;
+  border: 1px solid rgba(162, 145, 178, 0.12);
+  outline: none;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 11px 14px;
+  font-size: 0.94rem;
+  color: #54475f;
+  text-align: center;
+}
+
+.subjects-create-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subjects-create-button {
+  min-width: 148px;
+  background: linear-gradient(135deg, #d7a6f6 0%, #cf99f2 100%);
+  color: #3d244f;
+}
+
+.subjects-list-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #a3b2f6 0%, #a9b6fa 100%);
+}
+
+.subjects-list-card h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #16141c;
+  text-align: center;
+}
+
+.subjects-list-scroll {
+  display: grid;
+  gap: 12px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.subjects-list-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.subjects-list-copy {
+  display: grid;
+  gap: 4px;
+  color: #0f1015;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.subjects-list-row small {
+  color: rgba(15, 16, 21, 0.62);
+  font-size: 0.8rem;
+}
+
+.subjects-status-button {
+  border: 0;
+  border-radius: 999px;
+  min-height: 30px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #6e5a80;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.subjects-status-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.subjects-empty {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #8d8197;
+  font-weight: 600;
+}
+
+.subjects-empty.compact {
+  min-height: 90px;
+}
+
+@media (max-width: 1180px) {
+  .subjects-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .subjects-stat-grid,
+  .subjects-map-grid,
+  .subjects-assigned-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .subjects-stat-grid,
+  .subjects-map-grid,
+  .subjects-assigned-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subjects-panel-card {
+    padding: 16px;
+  }
+
+  .subjects-panel-head {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,346 @@
+.academic-years-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+  grid-template-areas:
+    "stats side"
+    "years side"
+    "structure classes";
+  gap: 18px;
+  min-height: 0;
+}
+
+.academic-years-main,
+.academic-years-side {
+  display: grid;
+  gap: 18px;
+}
+
+.academic-years-stat-grid {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 0.24fr));
+  gap: 14px;
+  justify-content: start;
+}
+
+.academic-years-main {
+  grid-area: years;
+}
+
+.academic-years-side {
+  grid-area: side;
+}
+
+.academic-years-structure-card {
+  grid-area: structure;
+}
+
+.academic-years-classes-card {
+  grid-area: classes;
+}
+
+.academic-years-stat-card,
+.academic-years-panel-card {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(140, 110, 162, 0.08);
+  box-shadow: 0 20px 44px rgba(144, 122, 164, 0.08);
+}
+
+.academic-years-stat-card {
+  position: relative;
+  min-height: 86px;
+  padding: 16px 14px;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.academic-years-stat-card h3 {
+  margin: 10px 0 6px;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #322f3d;
+}
+
+.academic-years-stat-card p {
+  margin: 0;
+  color: rgba(63, 44, 80, 0.68);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.academic-years-stat-card.purple {
+  background: linear-gradient(135deg, #c79df2 0%, #cfa9f8 100%);
+}
+
+.academic-years-stat-card.gold {
+  background: linear-gradient(135deg, #fde7a2 0%, #ffecb5 100%);
+}
+
+.academic-years-stat-plus {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.7rem;
+  color: rgba(255, 247, 187, 0.95);
+}
+
+.academic-years-panel-card {
+  padding: 18px;
+}
+
+.academic-years-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.academic-years-panel-head h3 {
+  margin: 0;
+  color: #3d3043;
+  font-size: 1.05rem;
+}
+
+.academic-years-panel-head p {
+  margin: 6px 0 0;
+  color: #8e819e;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.academic-years-panel-head select {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #f8f5ff;
+  color: #756781;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.academic-years-feedback {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(244, 229, 255, 0.95);
+  color: #704f82;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.academic-years-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+  max-height: 190px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.academic-years-pill {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 10px 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aab8ff 0%, #b6bcff 100%);
+}
+
+.academic-years-pill-copy span,
+.academic-years-pill-copy small {
+  display: block;
+}
+
+.academic-years-pill-copy span {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.academic-years-pill-copy small {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.76rem;
+}
+
+.academic-years-pill button,
+.academic-years-actions button {
+  border: 0;
+  border-radius: 999px;
+  min-height: 32px;
+  padding: 0 18px;
+  background: #ffffff;
+  color: #8a8a95;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.academic-years-pill button:disabled,
+.academic-years-actions button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.academic-years-form {
+  display: grid;
+  gap: 18px;
+}
+
+.academic-years-structure-form {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.academic-years-field {
+  display: grid;
+  gap: 14px;
+  place-items: center;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #a3b2f6 0%, #a9b6fa 100%);
+}
+
+.academic-years-field span {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1e1a26;
+}
+
+.academic-years-field input,
+.academic-years-field select {
+  width: 100%;
+  max-width: 170px;
+  border: 1px solid rgba(162, 145, 178, 0.12);
+  outline: none;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 11px 14px;
+  font-size: 0.94rem;
+  color: #54475f;
+  text-align: center;
+}
+
+.academic-years-section-picker {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  width: min(100%, 310px);
+  border-radius: 18px;
+  padding: 12px;
+  background: #e9a9ff;
+}
+
+.academic-years-section-picker button {
+  display: inline-grid;
+  place-items: center;
+  min-height: 34px;
+  border: 0;
+  border-radius: 999px;
+  color: #1e1a26;
+  background: #a9c7ff;
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.academic-years-section-picker button.selected {
+  color: #4f2c66;
+  background: #ffe8a5;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.72);
+}
+
+.academic-years-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.academic-years-class-list {
+  display: grid;
+  gap: 16px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.academic-years-class-pill {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  padding: 8px 12px 8px 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aab8ff 0%, #b6bcff 100%);
+}
+
+.academic-years-class-pill span {
+  color: #70648a;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.academic-years-class-pill small {
+  border-radius: 999px;
+  padding: 9px 16px;
+  color: #8a8a95;
+  background: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.academic-years-empty {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #8d8197;
+  font-weight: 600;
+}
+
+@media (max-width: 1180px) {
+  .academic-years-dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "stats"
+      "side"
+      "years"
+      "structure"
+      "classes";
+  }
+}
+
+@media (max-width: 900px) {
+  .academic-years-stat-grid,
+  .academic-years-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .academic-years-stat-grid,
+  .academic-years-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-years-class-pill {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+    padding: 14px;
+  }
+
+  .academic-years-panel-card {
+    padding: 16px;
+  }
+
+  .academic-years-section-picker {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

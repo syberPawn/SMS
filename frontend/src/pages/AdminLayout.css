@@ -1,0 +1,816 @@
+.admin-shell {
+  --admin-bg: var(--app-bg);
+  --admin-panel: var(--app-panel);
+  --admin-border: var(--app-border);
+  --admin-shadow: var(--app-shadow);
+  --admin-text: var(--app-text);
+  --admin-muted: var(--app-muted);
+  --admin-accent: var(--app-accent);
+  --admin-link: var(--app-link);
+  --admin-page-gap: 18px;
+  --admin-grid-gap: 14px;
+  --admin-card-bg: rgba(255, 255, 255, 0.86);
+  --admin-card-border: rgba(140, 110, 162, 0.08);
+  --admin-card-shadow: 0 20px 44px rgba(144, 122, 164, 0.08);
+  --admin-card-radius: 28px;
+  --admin-stat-radius: 16px;
+  --admin-stat-height: 118px;
+  --admin-stat-padding: 22px 18px;
+  --admin-pill-radius: 999px;
+  --admin-card-padding: 18px;
+  --admin-section-title: #3c3148;
+  --admin-body-text: #54475f;
+  --admin-subtle-text: #8b7e96;
+  --admin-label-text: #a095ae;
+  --admin-stat-text: #322f3d;
+  --admin-action-text: #6b4b84;
+  --admin-row-bg: rgba(255, 255, 255, 0.76);
+  --admin-soft-bg: rgba(247, 243, 250, 0.9);
+  --admin-field-bg: rgba(255, 255, 255, 0.9);
+  --admin-primary-action: linear-gradient(135deg, #d7a6f6 0%, #cf99f2 100%);
+  --admin-primary-action-text: #503166;
+  --admin-purple-stat: linear-gradient(135deg, #c79df2 0%, #cfa9f8 100%);
+  --admin-gold-stat: linear-gradient(135deg, #fde7a2 0%, #ffecb5 100%);
+  height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(223, 176, 247, 0.32), transparent 26%),
+    radial-gradient(circle at right 20%, rgba(255, 229, 160, 0.24), transparent 20%),
+    var(--admin-bg);
+  color: var(--admin-text);
+}
+
+.admin-shell.role-teacher {
+  --admin-accent: #c7a7ff;
+  --admin-stat-height: 118px;
+  --admin-stat-padding: 22px 18px;
+  --admin-stat-radius: 16px;
+}
+
+.admin-shell.role-student {
+  --admin-accent: #f5d98f;
+  --admin-stat-height: 118px;
+  --admin-stat-padding: 22px 18px;
+  --admin-stat-radius: 16px;
+}
+
+.admin-shell.role-student .admin-frame,
+.admin-shell.role-student .admin-main,
+.admin-shell.role-student .admin-main-content {
+  overflow: hidden;
+}
+
+.admin-shell.role-student .admin-main-content {
+  overflow-y: auto;
+}
+
+.admin-frame {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 48px);
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.admin-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  padding: 28px 16px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48));
+}
+
+.admin-brand {
+  padding: 6px 10px 0;
+}
+
+.admin-brand-label {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9f91b2;
+}
+
+.admin-brand-title {
+  margin: 10px 0 0;
+  font-size: 1.4rem;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-nav-link {
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: var(--admin-link);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.admin-nav-link:hover {
+  background: rgba(221, 167, 246, 0.22);
+  color: var(--admin-text);
+  transform: translateX(2px);
+}
+
+.admin-nav-link.active {
+  background: linear-gradient(135deg, var(--admin-accent) 0%, #e9bbff 100%);
+  color: #4f2c66;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.admin-sidebar-footer {
+  margin-top: auto;
+}
+
+.admin-logout {
+  width: 100%;
+  border: 1px solid rgba(126, 97, 148, 0.16);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--admin-text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 10px 18px;
+}
+
+.admin-topbar h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.admin-topbar p {
+  margin: 8px 0 0;
+  color: var(--admin-muted);
+}
+
+.admin-main-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.admin-shell.role-admin .admin-main-content {
+  color: var(--admin-body-text);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.admin-shell.role-admin .admin-main-content :is(h2, h3, h4) {
+  margin-top: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.15;
+  color: var(--admin-section-title);
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-dashboard,
+  .teacher-screen,
+  .student-workspace-main,
+  .academic-years-dashboard,
+  .attendance-dashboard,
+  .subjects-dashboard,
+  .fees-dashboard,
+  .exams-dashboard,
+  .users-dashboard
+) {
+  grid-template-columns: minmax(0, 2.2fr) minmax(320px, 1.2fr);
+  gap: var(--admin-page-gap);
+  align-items: start;
+  align-content: start;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-dashboard-main,
+  .teacher-screen-main,
+  .student-left-column,
+  .academic-years-main,
+  .academic-years-side,
+  .attendance-main,
+  .attendance-side,
+  .subjects-main,
+  .subjects-side,
+  .fees-main,
+  .fees-side,
+  .exams-main,
+  .users-main,
+  .users-side
+) {
+  gap: var(--admin-page-gap);
+  align-content: start;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-grid,
+  .teacher-stat-grid,
+  .student-stat-grid,
+  .academic-years-stat-grid,
+  .attendance-stat-grid,
+  .subjects-stat-grid,
+  .fees-stat-grid,
+  .exams-stat-grid,
+  .users-stat-grid
+) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--admin-grid-gap);
+  align-items: stretch;
+  align-content: start;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+) {
+  display: grid;
+  align-content: center;
+  height: var(--admin-stat-height);
+  min-height: var(--admin-stat-height);
+  border: 1px solid var(--admin-card-border);
+  border-radius: var(--admin-stat-radius);
+  padding: var(--admin-stat-padding);
+  box-shadow: none;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+).purple {
+  background: var(--admin-purple-stat);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+).gold {
+  background: var(--admin-gold-stat);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+) h3 {
+  margin: 10px 0 6px;
+  color: var(--admin-stat-text);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+) p {
+  margin: 0;
+  color: rgba(63, 44, 80, 0.68);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-grid,
+  .teacher-stat-grid,
+  .student-stat-grid,
+  .academic-years-stat-grid,
+  .attendance-stat-grid,
+  .subjects-stat-grid,
+  .fees-stat-grid,
+  .exams-stat-grid,
+  .users-stat-grid
+) > :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+):nth-child(-n + 2) {
+  cursor: pointer;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-stat-grid,
+  .teacher-stat-grid,
+  .student-stat-grid,
+  .academic-years-stat-grid,
+  .attendance-stat-grid,
+  .subjects-stat-grid,
+  .fees-stat-grid,
+  .exams-stat-grid,
+  .users-stat-grid
+) > :is(
+  .admin-stat-card,
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+):nth-child(-n + 2):hover {
+  transform: translateY(-1px);
+}
+
+.admin-shell.role-admin .admin-main-content .admin-stat-grid > .admin-stat-card:nth-child(n + 3)::after {
+  display: none;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .teacher-stat-grid,
+  .student-stat-grid,
+  .academic-years-stat-grid,
+  .attendance-stat-grid,
+  .subjects-stat-grid,
+  .fees-stat-grid,
+  .exams-stat-grid,
+  .users-stat-grid
+) > :is(
+  .teacher-stat-card,
+  .student-stat-card,
+  .academic-years-stat-card,
+  .attendance-stat-card,
+  .subjects-stat-card,
+  .fees-stat-card,
+  .exams-stat-card,
+  .users-stat-card
+):nth-child(n + 3) :is(
+  .teacher-stat-plus,
+  .student-stat-plus,
+  .academic-years-stat-plus,
+  .attendance-stat-plus,
+  .subjects-stat-plus,
+  .fees-stat-plus,
+  .exams-stat-plus,
+  .users-stat-plus
+) {
+  display: none;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-panel-card,
+  .admin-notices-panel,
+  .teacher-panel-card,
+  .teacher-directory-card,
+  .student-panel-card,
+  .student-enrollments-card,
+  .student-onboard-card,
+  .student-class-count-card,
+  .academic-years-panel-card,
+  .attendance-panel-card,
+  .attendance-side-card,
+  .subjects-panel-card,
+  .fees-panel-card,
+  .exams-panel-card,
+  .users-panel-card,
+  .users-modal
+) {
+  border: 1px solid var(--admin-card-border);
+  border-radius: var(--admin-card-radius);
+  background: var(--admin-card-bg);
+  box-shadow: var(--admin-card-shadow);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-panel-card,
+  .admin-notices-panel,
+  .teacher-panel-card,
+  .teacher-directory-card,
+  .student-panel-card,
+  .student-enrollments-card,
+  .student-onboard-card,
+  .student-class-count-card,
+  .academic-years-panel-card,
+  .attendance-panel-card,
+  .attendance-side-card,
+  .subjects-panel-card,
+  .fees-panel-card,
+  .exams-panel-card,
+  .users-panel-card
+) {
+  padding: var(--admin-card-padding);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-panel-header,
+  .teacher-panel-head,
+  .teacher-directory-head,
+  .student-panel-head,
+  .student-card-head,
+  .academic-years-panel-head,
+  .attendance-panel-head,
+  .attendance-side-head,
+  .attendance-modal-head,
+  .subjects-panel-head,
+  .fees-panel-head,
+  .exams-panel-head,
+  .users-panel-head,
+  .users-modal-head
+) h3 {
+  color: var(--admin-section-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .teacher-directory-head,
+  .student-card-head,
+  .attendance-side-head,
+  .users-modal-head
+) h3,
+.admin-shell.role-admin .admin-main-content :is(
+  .student-card-head,
+  .teacher-directory-copy
+) h4 {
+  color: var(--admin-section-title);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-panel-header,
+  .teacher-panel-head,
+  .teacher-directory-head,
+  .student-panel-head,
+  .student-card-head,
+  .academic-years-panel-head,
+  .attendance-panel-head,
+  .attendance-side-head,
+  .attendance-modal-head,
+  .subjects-panel-head,
+  .fees-panel-head,
+  .exams-panel-head,
+  .users-panel-head,
+  .users-modal-head
+) p {
+  color: var(--admin-subtle-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .teacher-mini-selects span,
+  .teacher-assignment-filters span,
+  .teacher-toolbar-field span,
+  .student-filter-group span,
+  .student-search-field span,
+  .student-enrollment-context span,
+  .attendance-filter-pills span,
+  .attendance-modal-filters span,
+  .subjects-class-chip span,
+  .fees-pill-field span,
+  .fees-stack-field span,
+  .fees-month-chip span,
+  .users-filters span
+) {
+  color: #6f6780;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .teacher-pill-field input,
+  .teacher-pill-field select,
+  .teacher-directory-head select,
+  .teacher-toolbar-field select,
+  .teacher-mini-selects select,
+  .teacher-assignment-controls select,
+  .teacher-assignment-filters select,
+  .student-filter-group select,
+  .student-search-field input,
+  .student-pill-field input,
+  .student-pill-field select,
+  .student-cell select,
+  .attendance-filter-pills select,
+  .attendance-modal-filters input,
+  .subjects-class-chip select,
+  .subjects-create-field input,
+  .fees-pill-field input,
+  .fees-pill-field select,
+  .fees-stack-field input,
+  .fees-stack-field select,
+  .fees-month-chip select,
+  .exams-pill-field input,
+  .users-filters select
+) {
+  color: var(--admin-body-text);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .academic-years-pill-copy span,
+  .attendance-percent-row,
+  .attendance-modal-row,
+  .subjects-map-pill span,
+  .subjects-assigned-pill span,
+  .subjects-list-copy,
+  .fees-structure-row,
+  .exams-instance-card,
+  .users-table-row,
+  .student-cell,
+  .student-student-cell strong,
+  .teacher-assignment-labels span,
+  .teacher-directory-copy h4
+) {
+  color: var(--admin-body-text);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .academic-years-pill-copy small,
+  .teacher-assignment-labels small,
+  .teacher-directory-copy p,
+  .teacher-directory-copy span,
+  .student-student-cell small,
+  .student-toolbar-summary span,
+  .student-enrollment-context strong,
+  .student-class-count-pill span,
+  .student-class-count-pill strong,
+  .subjects-list-row small,
+  .exams-bar-row,
+  .admin-bar-row,
+  .users-table-head,
+  .attendance-table-head,
+  .attendance-modal-table-head,
+  .student-enrollment-head,
+  .fees-structure-head
+) {
+  color: var(--admin-subtle-text);
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .teacher-action-button,
+  .teacher-assignment-controls button,
+  .student-action-button,
+  .subjects-create-button,
+  .fees-create-button,
+  .exams-actions button,
+  .users-row-actions button,
+  .users-modal-head button
+) {
+  color: var(--admin-action-text);
+  background: var(--admin-primary-action);
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .academic-years-pill button,
+  .academic-years-actions button,
+  .attendance-side-tabs button,
+  .attendance-modal-actions button,
+  .attendance-modal-filters button,
+  .attendance-modal-close,
+  .subjects-map-pill button,
+  .subjects-assigned-pill button,
+  .subjects-status-button,
+  .fees-pay-button,
+  .users-row-actions button,
+  .student-cell a,
+  .admin-tab,
+  .admin-clear-button,
+  .admin-notice-compose button
+) {
+  color: var(--admin-action-text);
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content :is(
+  .admin-panel-empty,
+  .teacher-screen-empty,
+  .student-workspace-empty,
+  .academic-years-empty,
+  .attendance-empty,
+  .subjects-empty,
+  .fees-empty,
+  .exams-empty,
+  .users-empty
+) {
+  color: var(--admin-subtle-text);
+  background: var(--admin-soft-bg);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) {
+  display: grid;
+  gap: var(--admin-page-gap);
+  color: var(--admin-body-text);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) br,
+.admin-shell.role-admin .admin-main-content > div:not([class]) hr {
+  display: none;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) > h2 {
+  margin: 0;
+  color: var(--admin-section-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) > h3 {
+  margin: 6px 0 -8px;
+  color: var(--admin-section-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) > :is(form, table, ul),
+.admin-shell.role-admin .admin-main-content > div:not([class]) > div:not([class]) {
+  border: 1px solid var(--admin-card-border);
+  border-radius: var(--admin-card-radius);
+  padding: var(--admin-card-padding);
+  background: var(--admin-card-bg);
+  box-shadow: var(--admin-card-shadow);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) > form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--admin-grid-gap);
+  align-items: end;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) > form > div,
+.admin-shell.role-admin .admin-main-content > div:not([class]) > div:not([class]) {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) label {
+  color: var(--admin-label-text);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) :is(input, select, textarea) {
+  width: 100%;
+  border: 1px solid rgba(162, 145, 178, 0.16);
+  border-radius: 16px;
+  background: var(--admin-field-bg);
+  color: var(--admin-body-text);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) button {
+  border: 0;
+  border-radius: var(--admin-pill-radius);
+  min-height: 36px;
+  padding: 8px 16px;
+  color: var(--admin-action-text);
+  background: var(--admin-primary-action);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) table {
+  overflow: hidden;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) th {
+  border: 0 !important;
+  background: rgba(244, 229, 255, 0.82);
+  color: #7f718f;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) td {
+  border: 1px solid rgba(162, 145, 178, 0.1) !important;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--admin-body-text);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: var(--admin-card-padding);
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) p[style*="color: blue"] {
+  color: var(--admin-accent-strong) !important;
+}
+
+.admin-shell.role-admin .admin-main-content > div:not([class]) p[style*="color: red"] {
+  color: var(--app-danger) !important;
+}
+
+@media (max-width: 1024px) {
+  .admin-frame {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: auto;
+  }
+
+  .admin-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .admin-shell {
+    padding: 12px;
+  }
+
+  .admin-frame {
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .admin-sidebar {
+    padding: 18px 12px;
+  }
+
+  .admin-topbar h2 {
+    font-size: 1.5rem;
+  }
+}
