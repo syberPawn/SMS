@@ -1,1 +1,16 @@
-node_modules/ 
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Debug logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables (security)
+.env
+.env.local
+
+# IDEs and editors
+.vscode/
+.idea/
